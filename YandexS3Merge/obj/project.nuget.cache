@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "7Ed2qJy3ENY=",
+  "success": true,
+  "projectFilePath": "C:\\d\\code\\YandexS3Merge\\YandexS3Merge\\YandexS3Merge.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\awssdk.core\\4.0.0-preview.7\\awssdk.core.4.0.0-preview.7.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\awssdk.s3\\4.0.0-preview.7\\awssdk.s3.4.0.0-preview.7.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\ironcompress\\1.6.3\\ironcompress.1.6.3.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.1\\microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\parquet.net\\5.1.1-pre.2\\parquet.net.5.1.1-pre.2.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\snappier\\1.1.6\\snappier.1.1.6.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\zstdsharp.port\\0.8.1\\zstdsharp.port.0.8.1.nupkg.sha512"
+  ],
+  "logs": []
+}
