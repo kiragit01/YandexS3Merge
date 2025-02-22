@@ -15,18 +15,21 @@ public static class S3ClientFactory
     public static IAmazonS3 CreateClient(AppConfig config)
     {
         // Используем Basic аутентификацию с ключами из конфига
-        var credentials = new BasicAWSCredentials(config.AccessKey, config.SecretKey);
+        var credentials = new BasicAWSCredentials(
+            config.AccessKey, 
+            config.SecretKey
+            );
         
         return new AmazonS3Client(
             credentials,
             new AmazonS3Config
             {
-                ServiceURL = "https://storage.yandexcloud.net",
-                AuthenticationRegion = "ru-central1", // Регион размещения бакета
-                ForcePathStyle = true,  // Обязательно для Yandex Cloud S3
-                UseHttp = false,         // Используем HTTPS
-                BufferSize = 65536,      // Размер буфера для операций
-                MaxErrorRetry = 3        // Количество повторов при ошибках
+                ServiceURL = config.ServiceURL,
+                AuthenticationRegion = config.Region,  // Регион размещения бакета
+                ForcePathStyle = config.ForcePathStyle,// Обязательно для Yandex Cloud S3
+                UseHttp = config.UseHttp,              // Используем HTTPS
+                BufferSize = config.S3BufferSize,      // Размер буфера для операций
+                MaxErrorRetry = config.MaxErrorRetry   // Количество повторов при ошибках
             }
         );
     }

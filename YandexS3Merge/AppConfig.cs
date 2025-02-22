@@ -13,10 +13,19 @@ public class AppConfig
     public string SecretKey { get; set; }
     /// <summary>Имя бакета в Object Storage</summary>
     public string BucketName { get; set; }
-    /// <summary>Путь к папке с файлами</summary>
-    public string Prefix { get; set; }
-    /// <summary>Путь для сохранения объединенного файла</summary>
-    public string OutputFile { get; set; }
+    
+    /* Настройки путей */
+    public string Prefix { get; set; }               // Префикс для поиска файлов
+    public string OutputFile { get; set; }           // Путь выходного файла
+    
+    /* Настройки подключения S3 */
+    public string ServiceURL { get; set; } = "https://storage.yandexcloud.net";
+    public string Region { get; set; } = "ru-central1";
+    public bool ForcePathStyle { get; set; } = true;
+    public bool UseHttp { get; set; } = false;
+    public int S3BufferSize { get; set; } = 65536;   // 64 KB
+    public int MaxErrorRetry { get; set; } = 3;
+    
     
     /// <summary>
     /// Загружает конфигурацию из JSON-файла

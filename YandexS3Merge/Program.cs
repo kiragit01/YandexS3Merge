@@ -6,20 +6,20 @@ class Program
     {
         try
         {
-            // Загрузка конфигурации из JSON
+            // Инициализация конфигурации из файла
             var config = AppConfig.LoadConfig("../../../appsettings.json");
-            
             Console.WriteLine("Запуск процесса объединения Parquet-файлов...");
             
-            // Инициализация и запуск процесса
-            using var merger = new S3ParquetMerger(config);
+            // Создание и запуск основного процессора объединения
+            using var merger = new MergeProcessor(config);
             await merger.MergeFilesAsync();
             
             Console.WriteLine("Объединение успешно завершено");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Ошибка: {ex.Message}");
+            // Обработка критических ошибок с выводом в консоль
+            Console.WriteLine($"Критическая ошибка: {ex.Message}");
             Environment.Exit(1);
         }
     }
